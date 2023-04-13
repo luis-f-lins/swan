@@ -1,0 +1,99 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- yes
+- ask_score
+- greet
+- goodbye
+- nervous_anxious
+- cant_stop_worrying
+- multiple_worries
+- trouble_relaxing
+- restless
+- annoyed_irritable
+- afraid_bad_things
+- done_reporting
+- happy
+- neutral
+- ask_resources
+- thanks
+- online
+- in_person
+- on_campus
+- off_campus
+- no
+slots:
+  consent:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_trigger_intent
+      value: true
+      intent: yes
+    - type: from_trigger_intent
+      value: false
+      intent: no
+  # seeing_therapist:
+  #   type: bool
+  #   influence_conversation: true
+  #   mappings:
+  #   - type: from_trigger_intent
+  #     value: true
+  #     intent: yes
+  #   - type: from_trigger_intent
+  #     value: false
+  #     intent: no
+  # want_share_data:
+  #   type: bool
+  #   influence_conversation: true
+  #   mappings:
+  #   - type: from_trigger_intent
+  #     value: true
+  #     intent: yes
+  #   - type: from_trigger_intent
+  #     value: false
+  #     intent: no
+responses:
+  utter_greet:
+  - text: Hi!
+  utter_ask_feeling:
+  - text: How are you feeling today?
+  utter_done_reporting:
+  - text: I see. Thanks for sharing all this. Let me know if I can help you in any way or if you want to talk about any other feeling.
+  utter_happy:
+  - text: Great, carry on!
+  utter_neutral:
+  - text: Are you sure you are okay? Is there anything bothering you?
+  utter_goodbye:
+  - text: Bye
+  utter_reply_no:
+  - text: Okay. Let me know if I can help you with anything else. I'll be here if you need me.
+  utter_reply_thanks:
+  - text: Great, good to know I was able to help you. Let me know if you need anything else.
+  utter_disclaimer:
+  - text: MEDICAL ADVICE DISCLAIMER - SWAN is a conversational agent designed to assist students in accessing mental health resources and contacts to services on and off-campus. SWAN provides the opportunity to self-assess and track anxiety and depression symptoms based on GAD-7 and PHQ-9 questionnaires for informational purposes. No material on this chatbot is intended to substitute professional medical advice, diagnosis, or treatment. Please seek the advice of a qualified healthcare provider for a definitive mental health diagnosis and treatment. 
+  utter_ask_consent:
+  - text: First of all, do we have your consent to store your information on file?
+  # utter_ask_on_off_campus:
+  # - text: Would you prefer on-campus or off-campus support?
+  # utter_ask_seeing_therapist:
+  # - text: Are you already seeing a therapist on campus?
+  # utter_ask_want_share_data:
+  # - text: Would you like us to share your mental health score with them?
+actions:
+- get_score
+- log_symptom
+- set_preference
+- share_resources
+- utter_ask_on_off_campus
+- utter_greet
+forms:
+  consent_form:
+    required_slots:
+    - consent
+  seeing_therapist_form:
+    required_slots:
+    - seeing_therapist
+    - want_share_data

@@ -1,0 +1,106 @@
+version: "3.0"
+
+rules:
+
+- rule: greet
+  steps:
+  - intent: greet  
+  - action: utter_greet
+  - action: utter_disclaimer
+  - action: consent_form 
+  - action: utter_ask_feeling               
+
+- rule: happy
+  steps:
+  - intent: happy               
+  - action: utter_happy
+
+- rule: neutral
+  steps:
+  - intent: neutral               
+  - action: utter_neutral
+
+- rule: anxiety symptom 1
+  steps:
+  - intent: nervous_anxious                     
+  - action: log_symptom
+
+- rule: anxiety symptom 2
+  steps:
+  - intent: cant_stop_worrying                     
+  - action: log_symptom
+
+- rule: anxiety symptom 3
+  steps:
+  - intent: multiple_worries                     
+  - action: log_symptom
+
+- rule: anxiety symptom 4
+  steps:
+  - intent: trouble_relaxing                     
+  - action: log_symptom
+
+- rule: anxiety symptom 5
+  steps:
+  - intent: restless                     
+  - action: log_symptom
+
+- rule: anxiety symptom 6
+  steps:
+  - intent: annoyed_irritable                     
+  - action: log_symptom
+
+- rule: anxiety symptom 7
+  steps:
+  - intent: afraid_bad_things                     
+  - action: log_symptom
+
+- rule: get score
+  steps:
+  - intent: ask_score               
+  - action: get_score
+
+- rule: done_reporting
+  steps:
+  - intent: done_reporting               
+  - action: utter_done_reporting
+
+- rule: ask_resources
+  steps:
+  - intent: ask_resources               
+  - action: share_resources
+
+- rule: thanks
+  steps:
+  - intent: thanks               
+  - action: utter_reply_thanks
+
+- rule: preference online
+  steps:
+  - intent: online               
+  - action: set_preference
+
+- rule: preference in person
+  steps:
+  - intent: in_person               
+  - action: set_preference
+
+- rule: preference on campus
+  steps:
+  - intent: on_campus               
+  - action: set_preference
+
+- rule: preference off campus
+  steps:
+  - intent: off_campus               
+  - action: set_preference
+
+- rule: seeing therapist form
+  condition:
+  - active_loop: seeing_therapist_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  steps:
+  - action: utter_ask_on_off_campus
+  - action: action_listen

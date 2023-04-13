@@ -1,0 +1,161 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - stop
+- intent: goodbye
+  examples: |
+    - good by
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: happy
+  examples: |
+    - I am actually feeling well
+    - I am feeling pretty good
+    - I feel good
+    - Can't complain
+    - I feel excited
+    - I am happy
+- intent: neutral
+  examples: |
+    - Not bad
+    - Not too bad
+    - It's okay
+    - I'm okay
+    - Getting by
+    - Pushing through
+- intent: nervous_anxious
+  examples: |
+    - I'm feeling nervous
+    - feeling anxious
+    - feeling on edge
+    - i feel anxious
+- intent: cant_stop_worrying
+  examples: |
+    - I can't stop worrying
+    - don't control my worry
+    - worry all the time
+- intent: multiple_worries
+  examples: |
+    - I worry about so many things
+    - Many worries
+    - I worry a lot about everything
+    - I worry about multiple things
+    - I worry so much
+    - I have many worries
+- intent: trouble_relaxing
+  examples: |
+    - I am having trouble relaxing
+    - I can't relax
+    - I don't know how to relax
+    - I need to loosen up, but I can't do it
+    - I need to relax
+- intent: restless
+  examples: |
+    - I am restless
+    - I am feeling restless
+    - I feel uneasy
+    - I feel agitated
+    - I feel on edge
+- intent: annoyed_irritable
+  examples: |
+    - I am feeling annoyed
+    - I am easily irritable
+    - I get stressed with everyone
+    - Everything annoys me
+    - I am getting annoyed at a lot of things
+- intent: afraid_bad_things
+  examples: |
+    - I am afraid something bad will happen
+    - I worry something bad is gonna happen
+    - I'm scared bad things will happen to me
+    - I can't stop thinking about bad things that could happen
+    - I'm always sure something bad is going to happen?
+- intent: ask_score
+  examples: |
+    - do I have anxiety?
+    - what do you think is wrong with me
+    - is there anything wrong with me
+    - why do i feel anxious?
+    - why do i feel bad?
+    - do i have anxiety?
+    - Do I have anxiety?
+- intent: done_reporting
+  examples: |
+    - No, this is it
+    - That's about it
+    - That's all I'm feeling
+    - I think that's it
+    - No, I'm done
+- intent: ask_resources
+  examples: |
+    - Can you help me?
+    - What can I do to get better?
+    - Can you provide me with resources for anxiety?
+    - Can you help with my anxiety?
+    - Can you make me feel better?
+- intent: thanks
+  examples: |
+    - Thank you
+    - Thanks
+    - This helped me
+    - Thanks for the help
+    - This is very useful
+- intent: online
+  examples: |
+    - Online
+    - I prefer online
+    - I prefer it to be online
+    - Online forums
+    - Online anxiety forums
+    - Internet forums
+    - Online groups
+- intent: in_person
+  examples: |
+    - In person
+    - In-person
+    - I prefer in person
+    - I prefer it to be in-person
+    - Local support groups
+    - In-person groups
+    - Local groups
+- intent: on_campus
+  examples: |
+    - On campus
+    - On-campus
+    - I prefer on campus
+    - I prefer it to be on campus
+- intent: off_campus
+  examples: |
+    - Off campus
+    - Off-campus
+    - I prefer off campus
+    - I prefer it to be off-campus
+- intent: yes
+  examples: |
+    - Yes
+    - Sure
+    - Ok
+- intent: no
+  examples: |
+    - No
+    - Not really
+    - Not sure
